@@ -7,7 +7,7 @@ tags:
 ---
 ## Road Map
 
-![[Pasted image 20250129191000.png]]
+![Image Description](/images/Pasted%20image%2020250129191000.png)
 ## Step 1: Obsidian
 
 - Start writing blog in obsidian under a `post` folder

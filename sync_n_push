@@ -1,11 +1,14 @@
 #!/bin/bash
 
-echo "Start syncing from obsidian vault. . ."
-rsync -av --delete "/srv/dev-disk-by-uuid-5d9f109b-e277-4117-973e-c7e67e8422ab/super_vault/yson/Obsidian Super Vault/posts/" "/home/yson-server/projects/myblog/content/posts/"
-
-echo "Processing image links in Markdown files..."
-if [ ! -f "image_sync.py" ]; then
+echo "Start syncing and processing image links in Markdown files..."
+if [ ! -f "sync_blogs.py" ]; then
     echo "Python script images.py not found."
+    exit 1
+fi
+
+echo "Running python script to sync blogs..."
+if ! python3 sync_blogs.py; then
+    echo "Failed to process image links."
     exit 1
 fi
 

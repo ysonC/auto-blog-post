@@ -13,12 +13,11 @@
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
       
       <guid>/posts/blog-development/</guid>
-      <description>Road Map ![[Pasted image 20250129191000.png]]
-Step 1: Obsidian Start writing blog in obsidian under a post folder Step 2: Hugo Use Hugo to turn the markdown in to website code. Install Go Download Go for Linux
+      <description>Road Map Step 1: Obsidian Start writing blog in obsidian under a post folder Step 2: Hugo Use Hugo to turn the markdown in to website code. Install Go Download Go for Linux
 wget https://go.dev/dl/go1.23.5.linux-arm64.tar.gz Remove any previous Go installation by deleting the /usr/local/go folder (if it exists), then extract the archive you just downloaded into /usr/local, creating a fresh Go tree in /usr/local/go:
 rm -rf /usr/local/go &amp;amp;&amp;amp; tar -C /usr/local -xzf go1.</description>
       <content>&lt;h2 id=&#34;road-map&#34;&gt;Road Map&lt;/h2&gt;
-&lt;p&gt;![[Pasted image 20250129191000.png]]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250129191000.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;step-1-obsidian&#34;&gt;Step 1: Obsidian&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Start writing blog in obsidian under a &lt;code&gt;post&lt;/code&gt; folder&lt;/li&gt;
