@@ -65,5 +65,128 @@ rm -rf /usr/local/go &amp;amp;&amp;amp; tar -C /usr/local -xzf go1.</description
 </content>
     </item>
     
+    <item>
+      <title></title>
+      <link>/posts/watchtower/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/watchtower/</guid>
+      <description>Watchtower is a Docker container that automatically updates your running containers when new versions of their images are available. It monitors your Docker containers, checks for updated images on the configured registries (e.g., Docker Hub), pulls the updated image, and restarts the container with the new version.
+Key Features of Watchtower: Automatic Updates:
+It checks for updates to the images of your running containers at regular intervals. If an update is available, it pulls the new image, stops the old container, and starts a new container with the updated image.</description>
+      <content>&lt;p&gt;&lt;strong&gt;Watchtower&lt;/strong&gt; is a Docker container that automatically updates your running containers when new versions of their images are available. It monitors your Docker containers, checks for updated images on the configured registries (e.g., Docker Hub), pulls the updated image, and restarts the container with the new version.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;key-features-of-watchtower&#34;&gt;Key Features of Watchtower:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Automatic Updates&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It checks for updates to the images of your running containers at regular intervals.&lt;/li&gt;
+&lt;li&gt;If an update is available, it pulls the new image, stops the old container, and starts a new container with the updated image.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Minimal Configuration&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Works with your existing &lt;code&gt;docker-compose.yml&lt;/code&gt; or manually created containers.&lt;/li&gt;
+&lt;li&gt;Automatically inherits volumes, ports, and other settings from the old container.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Customizable Update Behavior&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can control how frequently it checks for updates.&lt;/li&gt;
+&lt;li&gt;Set specific containers to be excluded from updates using labels.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Optional Notifications&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It supports notifications via services like Slack, Email, PagerDuty, and more, so you’re informed when containers are updated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;why-use-watchtower&#34;&gt;Why Use Watchtower?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Stay Up-to-Date&lt;/strong&gt;: Keep your containers updated with the latest security patches and features without manual intervention.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Convenience&lt;/strong&gt;: Saves time by automating updates, especially when running multiple containers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lightweight&lt;/strong&gt;: Watchtower itself is a lightweight container with minimal resource usage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt;: Ensures you’re running the latest, most secure versions of container images.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;example-use-case&#34;&gt;Example Use Case&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re running containers like &lt;strong&gt;Vaultwarden&lt;/strong&gt; or &lt;strong&gt;Homepage&lt;/strong&gt;, Watchtower will:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Periodically check for updates to their images.&lt;/li&gt;
+&lt;li&gt;If new versions are available:
+&lt;ul&gt;
+&lt;li&gt;Pull the updated image.&lt;/li&gt;
+&lt;li&gt;Restart the container using the new image, while preserving your existing configurations (volumes, ports, etc.).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-to-use-watchtower&#34;&gt;How to Use Watchtower&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Run Watchtower via Docker&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --name watchtower &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  -v /var/run/docker.sock:/var/run/docker.sock &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  containrrr/watchtower
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;-v /var/run/docker.sock:/var/run/docker.sock&lt;/code&gt; allows Watchtower to interact with the Docker daemon to manage containers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Using Docker Compose&lt;/strong&gt;: Add Watchtower to your &lt;code&gt;docker-compose.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;watchtower&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;containrrr/watchtower&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;container_name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;watchtower&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;/var/run/docker.sock:/var/run/docker.sock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;command&lt;/span&gt;: --&lt;span style=&#34;color:#ae81ff&#34;&gt;interval 300 &lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# Check for updates every 5 minutes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;restart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;unless-stopped&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Excluding Containers&lt;/strong&gt;: Use labels to prevent specific containers from being updated:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;some-service&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;some-image:latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;labels&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;com.centurylinklabs.watchtower.enable&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;pros-and-cons-of-watchtower&#34;&gt;Pros and Cons of Watchtower&lt;/h3&gt;
+&lt;h4 id=&#34;pros&#34;&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fully automated container updates.&lt;/li&gt;
+&lt;li&gt;Easy to set up and configure.&lt;/li&gt;
+&lt;li&gt;Reduces maintenance time.&lt;/li&gt;
+&lt;li&gt;Supports notifications for update status.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cons&#34;&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;May restart critical containers without warning unless configured properly.&lt;/li&gt;
+&lt;li&gt;Requires trust in the upstream image updates (e.g., no breaking changes).&lt;/li&gt;
+&lt;li&gt;Updates the entire container image, not just the application inside it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;best-practices-when-using-watchtower&#34;&gt;Best Practices When Using Watchtower&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Test Updates in Non-Production Environments&lt;/strong&gt;: Run Watchtower on non-critical systems to test updates before rolling them out to production.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use Image Tags Wisely&lt;/strong&gt;: Avoid using &lt;code&gt;latest&lt;/code&gt; tags unless necessary. Use version tags to lock to specific releases (e.g., &lt;code&gt;1.2.3&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor Logs&lt;/strong&gt;: Enable notifications or check logs periodically to ensure updates are applied correctly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exclude Critical Containers&lt;/strong&gt;: Prevent Watchtower from updating containers where downtime must be tightly controlled.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;when-should-you-use-watchtower&#34;&gt;When Should You Use Watchtower?&lt;/h3&gt;
+&lt;p&gt;Watchtower is great for &lt;strong&gt;small-scale deployments&lt;/strong&gt; or personal/home server setups where automated updates reduce maintenance effort. However, for &lt;strong&gt;large-scale production environments&lt;/strong&gt;, consider using tools like Kubernetes or other CI/CD pipelines that provide more granular control over updates.&lt;/p&gt;
+</content>
+    </item>
+    
   </channel>
 </rss>
