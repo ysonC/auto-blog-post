@@ -5,32 +5,39 @@ import shutil
 # Paths
 posts_dir = "/srv/dev-disk-by-uuid-5d9f109b-e277-4117-973e-c7e67e8422ab/super_vault/yson/Obsidian Super Vault/posts/"
 attachments_dir = "/srv/dev-disk-by-uuid-5d9f109b-e277-4117-973e-c7e67e8422ab/super_vault/yson/Obsidian Super Vault/97 - Resources/"
-static_images_dir = "/home/yson-server/myblog/static/images"
+static_images_dir = "/home/yson-server/projects/myblog/static/images"
+output_dir = "/home/yson-server/projects/myblog/content/posts"  # New directory to store modified copies
 
-# Step 1: Process each markdown file in the posts directory
+# Ensure the output directory exists
+os.makedirs(output_dir, exist_ok=True)
+
+# Process each markdown file in the posts directory
 for filename in os.listdir(posts_dir):
     if filename.endswith(".md"):
         filepath = os.path.join(posts_dir, filename)
-        
+        output_path = os.path.join(output_dir, filename)  # Store the modified file here
+
+        # Read the original markdown content
         with open(filepath, "r") as file:
             content = file.read()
-        
-        # Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)
+
+        # Find all image links in the format [[image.png]]
         images = re.findall(r'\[\[([^]]*\.png)\]\]', content)
-        
-        # Step 3: Replace image links and ensure URLs are correctly formatted
+
+        # Replace image links and ensure URLs are correctly formatted
+        new_content = content  # Keep the original content untouched
         for image in images:
-            # Prepare the Markdown-compatible link with %20 replacing spaces
             markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
-            content = content.replace(f"[[{image}]]", markdown_image)
-            
-            # Step 4: Copy the image to the Hugo static/images directory if it exists
+            new_content = new_content.replace(f"[[{image}]]", markdown_image)
+
+            # Copy the image to the Hugo static/images directory if it exists
             image_source = os.path.join(attachments_dir, image)
             if os.path.exists(image_source):
                 shutil.copy(image_source, static_images_dir)
 
-        # Step 5: Write the updated content back to the markdown file
-        with open(filepath, "w") as file:
-            file.write(content)
+        # Write the modified content to a new file, not the original one
+        with open(output_path, "w") as file:
+            file.write(new_content)
 
-print("Markdown files processed and images copied successfully.")
+print("Markdown files processed and copied to output directory without modifying originals.")
+
