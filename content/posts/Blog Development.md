@@ -127,6 +127,9 @@ if ! hugo; then
     exit 1
 fi
 
+echo "Syncing file to nginx docker..."
+rsync -avz --delete public/ /home/yson-server/docker-services/nginx/blog/public
+
 echo "Staging changes for Git..."
 if git diff --quiet && git diff --cached --quiet; then
     echo "No changes to stage."
