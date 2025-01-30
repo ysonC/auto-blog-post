@@ -31,3 +31,4 @@ params:
         weight: 5
 
   ShowBreadCrumbs: true
+  ShowMenuItems: 5
