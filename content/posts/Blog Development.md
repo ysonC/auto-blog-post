@@ -56,7 +56,7 @@ tags:
 	```
 
 - Local deploy
-	```
+	```bash
 	hugo server --bind 0.0.0.0 --baseURL http://10.179.5.96:1313/
 	```
 
