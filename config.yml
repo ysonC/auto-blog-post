@@ -2,6 +2,17 @@ baseURL: "http://10.179.5.96:33000"
 title: "My Super Juicy Blog"
 theme: "PaperMod"
 
+menu:
+  main:
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Tags
+      url: tags/
+      weight: 10
+    - name: Github
+      url: https://github.com/ysonC
+
 params:
   author: "Wyson Cheng"
 
@@ -12,23 +23,6 @@ params:
   socialIcons:
     - name: "github"
       url: "https://github.com/ysonC"
-  menu:
-    main:
-      - name: Home
-        url: /
-        weight: 5
-      - name: "Blog"
-        url: "/posts/"
-        weight: 2
-      - name: "Tags"
-        url: "/tags/"
-        weight: 3
-      - name: "About"
-        url: "/about/"
-        weight: 4
-      - name: "GitHub"
-        url: "https://github.com/ysonC"
-        weight: 5
 
   ShowBreadCrumbs: true
-  ShowMenuItems: 5
+
