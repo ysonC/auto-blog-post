@@ -4,5 +4,11 @@ theme: "PaperMod"
 
 params:
   author: "Wyson Cheng"
+
   homeInfoParams:
-    Title: Hi there wava
+    Title: Hi there
+    Content: Welcome to my blog
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/ysonC"
