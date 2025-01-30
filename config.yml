@@ -1,0 +1,7 @@
+baseURL: "http://10.179.5.96:33000"
+title: "My Hugo Blog"
+theme: "PaperMod"
+
+params:
+  author: "John Doe"
+  description: "A fast Hugo blog"

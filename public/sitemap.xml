@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>http://10.179.5.96:33000/tags/blog/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/blog/</loc>
+    <loc>http://10.179.5.96:33000/posts/blog-development/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/blog-development/</loc>
+    <loc>http://10.179.5.96:33000/tags/homelab/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/homelab/</loc>
+    <loc>http://10.179.5.96:33000/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>http://10.179.5.96:33000/posts/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>http://10.179.5.96:33000/tags/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/testblog/</loc>
+    <loc>http://10.179.5.96:33000/posts/testblog/</loc>
     <lastmod>2025-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>http://10.179.5.96:33000/categories/</loc>
   </url>
 </urlset>
