@@ -3,5 +3,6 @@ title: "My Hugo Blog"
 theme: "PaperMod"
 
 params:
-  author: "John Doe"
-  description: "A fast Hugo blog"
+  author: "Wyson Cheng"
+  homeInfoParams:
+    Title: Hi there wava
