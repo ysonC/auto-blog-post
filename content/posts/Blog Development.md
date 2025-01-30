@@ -107,17 +107,20 @@ for filename in os.listdir(posts_dir):
 print("Markdown files processed and images copied successfully.")
 ```
 
-## Step 4: Auto push to git
+## Step 4: Auto push to git and sync to docker 
 
 ```bash
 #!/bin/bash
 
-echo "Start syncing from obsidian vault. . ."
-rsync -av --delete "/srv/dev-disk-by-uuid-5d9f109b-e277-4117-973e-c7e67e8422ab/super_vault/yson/Obsidian Super Vault/posts/" "/home/yson-server/projects/myblog/content/posts/"
-
-echo "Processing image links in Markdown files..."
-if [ ! -f "image_sync.py" ]; then
+echo "Start syncing and processing image links in Markdown files..."
+if [ ! -f "sync_blogs.py" ]; then
     echo "Python script images.py not found."
+    exit 1
+fi
+
+echo "Running python script to sync blogs..."
+if ! python3 sync_blogs.py; then
+    echo "Failed to process image links."
     exit 1
 fi
 
@@ -150,4 +153,54 @@ if ! git push origin main; then
     echo "Failed to push to main branch."
     exit 1
 fi
+```
+
+
+## Step 5: Setup docker for Nginx
+
+- Use Portainer to deploy Nginx for the blog
+```yaml
+  nginx-blog:
+    image: nginx:alpine
+    container_name: nginx-blog
+    volumes:
+      - ${BASE}/nginx/blog/public:/usr/share/nginx/html
+    ports:
+      - "33000:80"
+    restart: unless-stopped
+```
+
+
+## Extra
+
+- `config.yml` for new theme: PaperMod
+
+```yaml
+baseURL: "http://10.179.5.96:33000"
+title: "My Super Juicy Blog"
+theme: "PaperMod"
+
+menu:
+  main:
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Tags
+      url: tags/
+      weight: 10
+    - name: Github
+      url: https://github.com/ysonC
+
+params:
+  author: "Wyson Cheng"
+
+  homeInfoParams:
+    Title: Hi there
+    Content: Welcome to my blog
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/ysonC"
+
+  ShowBreadCrumbs: true
 ```
