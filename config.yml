@@ -14,9 +14,9 @@ params:
       url: "https://github.com/ysonC"
   menu:
     main:
-      - name: "Home"
-        url: "/"
-        weight: 1
+      - name: Home
+        url: /
+        weight: 5
       - name: "Blog"
         url: "/posts/"
         weight: 2
