@@ -12,6 +12,7 @@ jobs:
       - name: Checkout Hugo Repository
         uses: actions/checkout@v4
         with:
+          submodules: recursive
           path: hugo  # Checkout Hugo repo into "hugo" directory
 
       - name: Install Hugo
@@ -34,8 +35,10 @@ jobs:
 
       - name: Build Hugo Site
         run: |
-          echo "Building Hugo site..."
           cd hugo  # Switch to Hugo repo directory
+          echo "Updating submodules..."
+          git submodule update --init --recursive
+          echo "Building Hugo site..."
           hugo --minify  # Now runs with themes and config
 
       - name: Commit & Push Changes
