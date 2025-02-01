@@ -13,9 +13,10 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Install Hugo
-        run: |
-          echo "Installing Hugo..."
-          sudo apt-get update && sudo apt-get install -y hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true  # Use this if you need Hugo Extended features
           
       - name: Checkout Private Vault Repo (Pull Blog Folder)
         uses: actions/checkout@v4
