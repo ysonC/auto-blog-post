@@ -23,7 +23,7 @@ jobs:
       - name: Checkout Private Vault Repo (Pull Blog Folder)
         uses: actions/checkout@v4
         with:
-          repository: YOUR_USERNAME/vault-repo  # Change to your Vault repo
+          repository: ysonC/super-obsidian-vault  # Change to your Vault repo
           token: ${{ secrets.VAULT_PAT }}
           path: vault  # Checkout Vault repo into "vault" directory
 
