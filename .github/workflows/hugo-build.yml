@@ -2,7 +2,7 @@ name: Hugo Build & Deploy
 
 on:
   repository_dispatch:
-    types: [build_hugo]  # This matches the event triggered from the Vault repo
+    types: [build_hugo]  # Triggered from Vault repo
 
 jobs:
   build_and_deploy:
@@ -11,35 +11,39 @@ jobs:
     steps:
       - name: Checkout Hugo Repository
         uses: actions/checkout@v4
-        
+        with:
+          path: hugo  # Checkout Hugo repo into "hugo" directory
+
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          extended: true  # Use this if you need Hugo Extended features
-          
+          extended: true  # Use Hugo Extended if needed
+
       - name: Checkout Private Vault Repo (Pull Blog Folder)
         uses: actions/checkout@v4
         with:
-          repository: ysonC/super-obsidian-vault  # Change this to match your private vault repo
-          token: ${{ secrets.VAULT_PAT }}  # Secret stored in Hugo repo
-          path: vault
+          repository: YOUR_USERNAME/vault-repo  # Change to your Vault repo
+          token: ${{ secrets.VAULT_PAT }}
+          path: vault  # Checkout Vault repo into "vault" directory
 
-      - name: Copy Blog Content
+      - name: Copy Blog Content into Hugo Repo
         run: |
-          echo "Copying updated blog posts from Vault repo..."
-          rsync -av --delete vault/posts/ content/posts/
+          echo "Copying updated blog posts from Vault repo to Hugo repo..."
+          rsync -av --delete vault/posts/ hugo/content/posts/
 
       - name: Build Hugo Site
         run: |
           echo "Building Hugo site..."
-          hugo --minify
+          cd hugo  # Switch to Hugo repo directory
+          hugo --minify  # Now runs with themes and config
 
       - name: Commit & Push Changes
         run: |
           echo "Committing and pushing updated Hugo site..."
+          cd hugo  # Ensure we're in the Hugo repo
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add .
-          git commit -m "Updated site from vault" || echo "No changes to commit"
+          git commit -m "Updated site from Vault" || echo "No changes to commit"
           git push
