@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>#Dissertation on My Super Juicy Blog</title>
+    <link>http://10.179.5.96:33000/tags/%23dissertation/</link>
+    <description>Recent content in #Dissertation on My Super Juicy Blog</description>
+    <generator>Hugo -- 0.143.0</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://10.179.5.96:33000/tags/%23dissertation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Possible Projects</title>
+      <link>http://10.179.5.96:33000/posts/possible-projects/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://10.179.5.96:33000/posts/possible-projects/</guid>
+      <description>&lt;h4 id=&#34;investing-in-whisky-using-machine-learning-to-predict-asset-pricing-in-alternative-investments&#34;&gt;&lt;del&gt;Investing in whisky: using Machine Learning to predict asset pricing in alternative investments&lt;/del&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;&lt;strong&gt;Principal Goal:&lt;/strong&gt; Build an &lt;em&gt;asset&lt;/em&gt; pricing model for whisky&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;classifying-online-lecture-engagement-using-facial-expressions&#34;&gt;&lt;del&gt;Classifying online lecture engagement using facial expressions&lt;/del&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;&lt;strong&gt;Principal Goal:&lt;/strong&gt; To develop a classifier of a student&amp;rsquo;s mental state based on their facial expressions while watching an online lecture video.&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;developing-a-prototype-of-ai-tool-to-identify-paediatric-respiratory-difficulty-in-low-resource-settings&#34;&gt;&lt;del&gt;Developing a prototype of AI tool to identify paediatric respiratory difficulty in low resource settings&lt;/del&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;&lt;strong&gt;Principal Goal:&lt;/strong&gt; Develop a prototype of AI tool to identify paediatric respiratory difficulty in low resource settings – use machine learning to analyse the video image recording for work of breathing&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;memory-safe-execution-of-c&#34;&gt;&lt;del&gt;Memory-safe Execution of C&lt;/del&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;&lt;strong&gt;Principal Goal:&lt;/strong&gt; To reimplement one of the many published approaches to provide memory-safe execution to C, and to evaluate the performance implications on current processors&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;measuring-the-state-of-web-privacy&#34;&gt;Measuring the state of web privacy&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Principal Goal:&lt;/strong&gt; to quantify the state of web privacy using various web measurement methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-to-sent-automated-email-that-actually-reaches-it-destination&#34;&gt;How to sent automated email that actually reaches it destination&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Principal Goal:&lt;/strong&gt; Figure out how to sent automated email that actually reaches it destination&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
