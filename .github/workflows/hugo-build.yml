@@ -40,7 +40,7 @@ jobs:
           echo "Updating submodules..."
           git submodule update --init --recursive
           echo "Building Hugo site..."
-          hugo --minify  # Now runs with themes and config
+          hugo  # Now runs with themes and config
 
       - name: Commit & Push Changes
         run: |
