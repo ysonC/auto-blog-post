@@ -12,9 +12,8 @@ A way to mange infrastructure by using Git as the single control centre. Instead
 It makes the deployment consistent, easy to track (version control), and quick to roll back if something goes wrong.
 
 ## What are the option?
-### Argo CD
 
-### Flux
+### For Kubernetes: Argo CD or Flux
 
 |**Aspect**|**Argo CD**|**Flux CD**|
 |---|---|---|
