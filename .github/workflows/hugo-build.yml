@@ -41,11 +41,15 @@ jobs:
           git submodule update --init --recursive
           echo "Building Hugo site..."
           hugo --minify # Now runs with themes and config
+          ls -l
+          
       - name: Copy Web Content to docker
         run: |
           echo "Rsyncing to docker folder..."
-          rsync -avz --delete public/ /home/yson-server/docker-services/nginx/blog/public
-          echo "Rsync complete."     
+          ls -l
+          rsync -avz --delete hugo/public/ /home/yson-server/docker-services/nginx/blog/public
+          echo "Rsync complete."
+          
       - name: Commit & Push Changes
         run: |
           echo "Committing and pushing updated Hugo site..."
