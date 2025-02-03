@@ -6,7 +6,7 @@ on:
 
 jobs:
   build_and_deploy:
-    runs-on: ubuntu-latest
+    runs-on: "self-hosted"
 
     steps:
       - name: Checkout Hugo Repository
@@ -43,7 +43,13 @@ jobs:
           git submodule update --init --recursive
           echo "Building Hugo site..."
           hugo --minify # Now runs with themes and config
-
+          
+      - name: Copy Web Content to docker
+        run: |
+          echo "Rsyncing to docker folder..."
+          rsync -avz --delete hugo/public/ /home/yson-server/docker-services/nginx/blog/public
+          echo "Rsync complete."
+          
       - name: Commit & Push Changes
         run: |
           echo "Committing and pushing updated Hugo site..."
