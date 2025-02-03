@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Extra on My Super Juicy Blog</title>
-    <link>http://10.179.5.96:33000/tags/extra/</link>
-    <description>Recent content in Extra on My Super Juicy Blog</description>
-    <generator>Hugo -- 0.143.0</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://10.179.5.96:33000/tags/extra/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What is GitOps</title>
-      <link>http://10.179.5.96:33000/posts/what-is-gitops/</link>
-      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://10.179.5.96:33000/posts/what-is-gitops/</guid>
-      <description>&lt;h2 id=&#34;what-is&#34;&gt;What is?&lt;/h2&gt;
-&lt;p&gt;A way to mange infrastructure by using Git as the single control centre. Instead of manually setting up or updating the system, config file that describe the system is stored on Git. When these files are change, automation tools (Argo CD or Flux) will automatically update the systems to match the new config.&lt;/p&gt;
-&lt;p&gt;It makes the deployment consistent, easy to track (version control), and quick to roll back if something goes wrong.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Extra on My Super Juicy Blog</title><link>http://10.179.5.96:33000/tags/extra/</link><description>Recent content in Extra on My Super Juicy Blog</description><generator>Hugo -- 0.142.0</generator><language>en</language><lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://10.179.5.96:33000/tags/extra/index.xml" rel="self" type="application/rss+xml"/><item><title>What is GitOps</title><link>http://10.179.5.96:33000/posts/what-is-gitops/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://10.179.5.96:33000/posts/what-is-gitops/</guid><description>&lt;h2 id="what-is">What is?&lt;/h2>
+&lt;p>A way to mange infrastructure by using Git as the single control centre. Instead of manually setting up or updating the system, config file that describe the system is stored on Git. When these files are change, automation tools (Argo CD or Flux) will automatically update the systems to match the new config.&lt;/p>
+&lt;p>It makes the deployment consistent, easy to track (version control), and quick to roll back if something goes wrong.&lt;/p></description></item></channel></rss>

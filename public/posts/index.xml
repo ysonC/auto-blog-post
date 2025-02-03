@@ -1,56 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on My Super Juicy Blog</title>
-    <link>http://10.179.5.96:33000/posts/</link>
-    <description>Recent content in Posts on My Super Juicy Blog</description>
-    <generator>Hugo -- 0.143.0</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://10.179.5.96:33000/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What is GitOps</title>
-      <link>http://10.179.5.96:33000/posts/what-is-gitops/</link>
-      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://10.179.5.96:33000/posts/what-is-gitops/</guid>
-      <description>&lt;h2 id=&#34;what-is&#34;&gt;What is?&lt;/h2&gt;
-&lt;p&gt;A way to mange infrastructure by using Git as the single control centre. Instead of manually setting up or updating the system, config file that describe the system is stored on Git. When these files are change, automation tools (Argo CD or Flux) will automatically update the systems to match the new config.&lt;/p&gt;
-&lt;p&gt;It makes the deployment consistent, easy to track (version control), and quick to roll back if something goes wrong.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Blog Development</title>
-      <link>http://10.179.5.96:33000/posts/blog-development/</link>
-      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://10.179.5.96:33000/posts/blog-development/</guid>
-      <description>&lt;h2 id=&#34;road-map&#34;&gt;Road Map&lt;/h2&gt;
-&lt;p&gt;![[Pasted image 20250129191000.png]]&lt;/p&gt;
-&lt;h2 id=&#34;step-1-obsidian&#34;&gt;Step 1: Obsidian&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Start writing blog in obsidian under a &lt;code&gt;post&lt;/code&gt; folder&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;step-2-hugo&#34;&gt;Step 2: Hugo&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Use Hugo to turn the markdown in to website code.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;install-go&#34;&gt;Install Go&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Download Go for Linux&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://go.dev/dl/go1.23.5.linux-arm64.tar.gz
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Remove any previous Go installation&lt;/strong&gt; by deleting the &lt;code&gt;/usr/local/go&lt;/code&gt; folder (if it exists), then extract the archive you just downloaded into &lt;code&gt;/usr/local&lt;/code&gt;, creating a fresh Go tree in &lt;code&gt;/usr/local/go&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm -rf /usr/local/go &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; tar -C /usr/local -xzf go1.23.5.linux-amd64.tar.gz
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add &lt;code&gt;/usr/local/go/bin&lt;/code&gt; to the &lt;code&gt;PATH&lt;/code&gt; environment variable.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TestBlog</title>
-      <link>http://10.179.5.96:33000/posts/testblog/</link>
-      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://10.179.5.96:33000/posts/testblog/</guid>
-      <description>&lt;h1 id=&#34;hello-world-this-is-my-first-blog-post&#34;&gt;Hello world! This is my first blog post!!!&lt;/h1&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on My Super Juicy Blog</title><link>http://10.179.5.96:33000/posts/</link><description>Recent content in Posts on My Super Juicy Blog</description><generator>Hugo -- 0.142.0</generator><language>en</language><lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://10.179.5.96:33000/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>What is GitOps</title><link>http://10.179.5.96:33000/posts/what-is-gitops/</link><pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate><guid>http://10.179.5.96:33000/posts/what-is-gitops/</guid><description>&lt;h2 id="what-is">What is?&lt;/h2>
+&lt;p>A way to mange infrastructure by using Git as the single control centre. Instead of manually setting up or updating the system, config file that describe the system is stored on Git. When these files are change, automation tools (Argo CD or Flux) will automatically update the systems to match the new config.&lt;/p>
+&lt;p>It makes the deployment consistent, easy to track (version control), and quick to roll back if something goes wrong.&lt;/p></description></item><item><title>Blog Development</title><link>http://10.179.5.96:33000/posts/blog-development/</link><pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate><guid>http://10.179.5.96:33000/posts/blog-development/</guid><description>&lt;h2 id="road-map">Road Map&lt;/h2>
+&lt;p>![[Pasted image 20250129191000.png]]&lt;/p>
+&lt;h2 id="step-1-obsidian">Step 1: Obsidian&lt;/h2>
+&lt;ul>
+&lt;li>Start writing blog in obsidian under a &lt;code>post&lt;/code> folder&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-2-hugo">Step 2: Hugo&lt;/h2>
+&lt;ul>
+&lt;li>Use Hugo to turn the markdown in to website code.&lt;/li>
+&lt;/ul>
+&lt;h3 id="install-go">Install Go&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Download Go for Linux&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget https://go.dev/dl/go1.23.5.linux-arm64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Remove any previous Go installation&lt;/strong> by deleting the &lt;code>/usr/local/go&lt;/code> folder (if it exists), then extract the archive you just downloaded into &lt;code>/usr/local&lt;/code>, creating a fresh Go tree in &lt;code>/usr/local/go&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rm -rf /usr/local/go &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> tar -C /usr/local -xzf go1.23.5.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add &lt;code>/usr/local/go/bin&lt;/code> to the &lt;code>PATH&lt;/code> environment variable.&lt;/p></description></item><item><title>TestBlog</title><link>http://10.179.5.96:33000/posts/testblog/</link><pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate><guid>http://10.179.5.96:33000/posts/testblog/</guid><description>&lt;h1 id="hello-world-this-is-my-first-blog-post">Hello world! This is my first blog post!!!&lt;/h1></description></item></channel></rss>
