@@ -15,10 +15,10 @@ jobs:
           submodules: recursive
           path: hugo  # Checkout Hugo repo into "hugo" directory
 
-      - name: Install Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.119.0'
           extended: true  # Use Hugo Extended if needed
 
       - name: Checkout Private Vault Repo (Pull Blog Folder)
@@ -40,7 +40,7 @@ jobs:
           echo "Updating submodules..."
           git submodule update --init --recursive
           echo "Building Hugo site..."
-          hugo  # Now runs with themes and config
+          hugo --minify # Now runs with themes and config
 
       - name: Commit & Push Changes
         run: |
