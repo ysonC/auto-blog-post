@@ -32,7 +32,7 @@ jobs:
       - name: Copy Blog Content into Hugo Repo
         run: |
           echo "Copying updated blog posts from Vault repo to Hugo repo..."
-          python3 copy_images.py
+          python3 hugo/copy_images.py
 
 # rsync -av --delete vault/posts/ hugo/content/posts/
 
