@@ -22,5 +22,3 @@ It makes the deployment consistent, easy to track (version control), and quick t
 |**Workflow Integration**|Offers both manual and automated sync options; supports multi-cluster deployments.|Focuses on a strict Git-centric, pull-based workflow, integrating seamlessly into Git.|
 |**Advanced Features**|Provides detailed status reporting, rollback capabilities, and extensive multi-cluster support.|Emphasizes simplicity and flexibility, leaving more customization to user scripts.|
 |**Integration & Ecosystem**|Integrates well with various CI/CD tools and the Kubernetes ecosystem, benefiting from a large community.|Tightly integrates with Git workflows, making it ideal for environments that prefer minimal overhead.|
-![Image Description](/images/Pasted%20image%2020250203122131.png)
-test image
