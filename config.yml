@@ -1,4 +1,4 @@
-baseURL: "http://10.179.5.96:33000"
+baseURL: "http://piserver:33000"
 title: "My Super Juicy Blog"
 theme: "PaperMod"
 
@@ -14,7 +14,7 @@ menu:
       url: https://github.com/ysonC
 
 params:
-  author: "Wyson Cheng Test1 2 3 4"
+  author: "Wyson Cheng"
 
   homeInfoParams:
     Title: Hi there
