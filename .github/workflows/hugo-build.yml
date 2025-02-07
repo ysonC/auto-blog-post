@@ -3,6 +3,9 @@ name: Hugo Build & Deploy
 on:
   repository_dispatch:
     types: [build_hugo]  # Triggered from Vault repo
+  push:
+    paths:
+      - "config.yaml"
 
 jobs:
   build_and_deploy:
