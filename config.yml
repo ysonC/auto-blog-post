@@ -1,4 +1,5 @@
-baseURL: "http://piserver:33000"
+#baseURL: "http://piserver:33000"
+baseURL: "http://1pi5:30002"
 title: "My Super Juicy Blog"
 theme: "PaperMod"
 
