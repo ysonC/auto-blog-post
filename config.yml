@@ -1,6 +1,6 @@
 #baseURL: "http://piserver:33000"
 baseURL: "http://1pi5:30010"
-title: "My Super Juicy Blog!!!"
+title: "My Super Juicy Blog!!!!"
 theme: "PaperMod"
 
 menu:
