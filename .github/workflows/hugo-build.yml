@@ -51,22 +51,21 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: Build and Push docker image
-        run: |
-          echo "Building docker image..."
-          cd hugo
-          echo "Building docker image..."
-          docker build --platform linux/arm64 -t wyson002/my-hugo-blog .
-          echo "Pushing docker image..."
-          docker push wyson002/my-hugo-blog
-          echo "Docker image built."
-          
-      - name: Copy Web Content to docker
-        run: |
-          echo "Rsyncing to docker folder..."
-          rsync -avz --delete hugo/public/ /home/yson-server/docker-services/nginx/blog/public
-          echo "Rsync complete."
-          
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./hugo   # Ensure it builds from the Hugo directory
+          file: ./hugo/Dockerfile  # Ensure it uses the correct Dockerfile
+          push: true
+          tags: wyson002/my-hugo-blog:latest
+          platforms: linux/arm64
+      
       - name: Commit & Push Changes
         run: |
           echo "Committing and pushing updated Hugo site..."
