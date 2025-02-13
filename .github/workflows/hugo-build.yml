@@ -57,13 +57,34 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Bump Version and Tag
+        id: bump_version
+        working-directory: hugo
+        run: |
+          # Initialize VERSION file if it doesn't exist
+          if [ ! -f VERSION ]; then
+            echo "0.0.0" > VERSION
+          fi
+          current_version=$(cat VERSION)
+          echo "Current version: $current_version"
+          # Split the version into major, minor, and patch numbers
+          IFS='.' read -r major minor patch <<< "$current_version"
+          # Increment the patch number (adjust logic as needed for minor/major bumps)
+          new_patch=$((patch + 1))
+          new_version="${major}.${minor}.${new_patch}"
+          echo "New version: $new_version"
+          # Update the VERSION file with the new version
+          echo "$new_version" > VERSION
+          # Set the new version as an output variable for subsequent steps
+          echo "::set-output name=new_version::$new_version"
+      
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           context: ./hugo   # Ensure it builds from the Hugo directory
           file: ./hugo/Dockerfile  # Ensure it uses the correct Dockerfile
           push: true
-          tags: wyson002/my-hugo-blog:latest
+          tags: wyson002/my-hugo-blog:v${{ steps.bump_version.outputs.new_version }},wyson002/my-hugo-blog:latest
           platforms: linux/arm64
       
       - name: Commit & Push Changes
